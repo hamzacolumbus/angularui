@@ -1,0 +1,48 @@
+<div class="signup">
+  <div class="tabs">
+    <h2>Create a new account</h2>
+    <div [title]="'Signup'">
+      <form class="form" #userlogin="ngForm" (ngSubmit)="verify(userlogin.value)">
+        <label fd-form-label>Name</label>
+        <fd-input-group
+          [button]="true"
+          [placement]="'before'"
+          [glyph]="'accelerated'"
+          [placeholder]="'e.g Name'"
+          (ngModel)="(signin.name)"
+          name="name"
+        ></fd-input-group>
+        <label fd-form-label>Adress</label>
+        <fd-input-group
+          [button]="true"
+          [placement]="'before'"
+          [glyph]="'accelerated'"
+          (ngModel)="(signin.adress)"
+          name="adress"
+        ></fd-input-group>
+        <label fd-form-label>Secret</label>
+        <fd-input-group
+          type="password"
+          [button]="true"
+          [placement]="'before'"
+          [glyph]="'accelerated'"
+          [placeholder]="'e.g'"
+          (ngModel)="(signin.pw)"
+          name="pw"
+        ></fd-input-group>
+        <label fd-form-label>repeat</label>
+        <fd-input-group
+          type="password"
+          [button]="true"
+          [placement]="'before'"
+          [glyph]="'accelerated'"
+          [placeholder]="'e.g'"
+          (ngModel)="(signin.pw_2)"
+          name="pw_2"
+        ></fd-input-group>
+        <button type="submit" fd-button label="Signin">Signin</button>
+      </form>
+    </div>
+  </div>
+  <div class="picc"><img src="../../../assets/picc.jpg" /></div>
+</div>

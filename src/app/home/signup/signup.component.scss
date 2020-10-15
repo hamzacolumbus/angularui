@@ -1,0 +1,32 @@
+.form {
+  margin-top: 1em;
+
+  display: flex;
+  flex-direction: column;
+}
+.signup {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #e9f4f5;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+}
+img {
+  margin-right: 2em;
+  margin-top: 2em;
+
+  height: 85vh;
+  width: 45vw;
+
+  border-radius: 4em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.tabs {
+  margin: 8em;
+}
+
+button {
+  margin-top: 1em;
+}

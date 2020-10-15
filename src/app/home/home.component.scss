@@ -1,0 +1,39 @@
+.logo {
+  width: 100px;
+}
+
+q {
+  font-style: italic;
+  font-size: 1.2rem;
+  quotes: "« " " »";
+}
+
+.content {
+  display: flex;
+  height: 100vh;
+
+  justify-content: center;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-around;
+
+  flex-wrap: wrap;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 25rem, margin-bottom 2em;
+}
+
+.list {
+  box-shadow: -1px 0px 11px -1px #3f3f3f;
+}
+.card:hover {
+  box-shadow: -1px 0px 11px -1px #3f3f3f;
+}

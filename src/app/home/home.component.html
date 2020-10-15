@@ -1,0 +1,19 @@
+<div class="container-fluid content">
+  <div style="padding: 2rem">
+    <button fd-button [glyph]="'accept'" label="Emphasized Button" [fdType]="'emphasized'">new project</button>
+
+    <div class="projects">
+      <a href="">
+        <fd-card [isLoading]="false">
+          <fd-card-header>
+            <h2 fd-card-title>Project</h2>
+          </fd-card-header>
+          <fd-card-content> Card content... </fd-card-content>
+          <fd-card-loader>
+            <fd-busy-indicator [loading]="false"></fd-busy-indicator>
+          </fd-card-loader> </fd-card
+      ></a>
+    </div>
+  </div>
+  <div class="activity" style="width: 49vw; padding: 2rem"></div>
+</div>
