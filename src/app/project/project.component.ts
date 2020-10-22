@@ -1,24 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { ProjectService } from './project.service';
 
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.scss'],
+  styleUrls: ['./project.component.scss'],    
+  changeDetection: ChangeDetectionStrategy.OnPush,
+    styles: [`
+      :host nb-tab {
+        padding: 1.25rem;
+      }`]
 })
 export class ProjectComponent implements OnInit {
-  projects: any;
-  isExpanded = true;
-  state = 'collapsed';
-  display: boolean = false;
-  constructor(private s: ProjectService) {}
-
-  ngOnInit() {}
-
-  open() {
-    this.display = true;
-  }
-  toggleSidenav() {
-    this.isExpanded = !this.isExpanded;
+  ngOnInit(){
+    
   }
 }

@@ -8,4 +8,5 @@ export interface AuthenticationState {
   errorMessage?: string;
   authed?: boolean;
   register?: Create_dto;
+  navb:  boolean
 }

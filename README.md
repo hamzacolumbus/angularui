@@ -6,8 +6,8 @@
 ### Clone the repo
 
 ```shell
-git clone https://github.com/bryanforbes/intern-angular
-cd intern-angular
+git clone
+cd angularui
 ```
 
 ### Install npm packages
@@ -18,7 +18,6 @@ Install the `npm` packages described in the `package.json` and verify that it wo
 npm install
 npm start
 ```
-
 
 # Getting started
 
@@ -31,7 +30,17 @@ npm start
  ```bash
  ng serve
  ```
- 
+ ## Using Docker
+
+
+ ```shell
+cd angularui
+docker build --name ui
+docker run ui
+npm start
+```
+
+
 # Project structure
 
 ```
@@ -67,10 +76,6 @@ Tasks                         | Description
 ------------------------------|---------------------------------------------------------------------------------------
 npm start                     | Run development server on `http://localhost:4200/`
 npm run build [-- --env=prod] | Lint code and build app for production in `dist/` folder
-npm test                      | Run unit tests via [Karma](https://karma-runner.github.io) in watch mode
-npm run test:ci               | Lint code and run unit tests once for continuous integration
-npm run e2e                   | Run e2e tests using [Protractor](http://www.protractortest.org)
-npm run lint                  | Lint code
 npm run translations:extract  | Extract strings from code and templates to `src/app/translations/template.json`
 npm run docs                  | Display project documentation
 
@@ -87,6 +92,8 @@ The default build environment is `prod`.
 - [NgRx](docs/corporate-proxy.md)
 - [TypeScript](docs/i18n.md)
 - [Proxy](docs/corporate-proxy.md)
+
+
 #### Other documentation
 
 - [I18n guide](docs/i18n.md)

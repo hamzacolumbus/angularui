@@ -8,8 +8,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProjectRoutingModule } from './project-routing.module';
 import { ProjectComponent } from './project.component';
 import { FundamentalNgxCoreModule } from '@fundamental-ngx/core';
+import { NbMenuModule, NbRouteTabsetModule, NbCardHeaderComponent, NbCardModule, NbTabsetModule, NbSidebarModule } from '@nebular/theme';
 @NgModule({
-  imports: [CommonModule, BrowserAnimationsModule, DialogModule, TranslateModule, ProjectRoutingModule,  FundamentalNgxCoreModule,  IconModule],
+  imports: [
+    CommonModule,
+    BrowserAnimationsModule,
+    NbMenuModule,
+    DialogModule,
+    TranslateModule,
+    ProjectRoutingModule,
+    FundamentalNgxCoreModule,
+    IconModule,
+    NbRouteTabsetModule,
+    NbCardModule,
+    NbTabsetModule,
+    NbSidebarModule.forRoot(),
+  ],
   declarations: [ProjectComponent],
 })
 export class ProjectModule {}

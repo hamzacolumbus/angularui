@@ -1,0 +1,21 @@
+
+
+
+
+
+.list{
+    display: flex;
+    flex-direction: column;
+}
+
+.navv{
+    background-color: rgb(7, 42, 136);
+}
+a{
+    padding: 1em;
+    color: lightyellow;
+}
+a:hover{
+    background-color: rgb(232, 234, 247);
+    border-radius: 1em;
+}

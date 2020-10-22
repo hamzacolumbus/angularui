@@ -8,6 +8,8 @@ import {
   logout,
   logout_failed,
   logout_request,
+  show_nav,
+  hide_nav,
 } from './auth.actions';
 
 import { createReducer, on } from '@ngrx/store';
@@ -19,6 +21,7 @@ const initialAuthenticationState: AuthenticationState = {
   authed: false,
 
   register: null,
+  navb:  false
 };
 
 export const AuthenticationReducer = createReducer(
@@ -31,7 +34,9 @@ export const AuthenticationReducer = createReducer(
   on(logout_failed, (state) => ({ ...state, isLoading: false })),
   on(logout, (state) => ({ ...state, isLoading: false })),
   on(login_request, (state) => ({ ...state, isLoading: true })),
-
+  
+  on(show_nav, (state) => ({ ...state, navb: true })),
+  on(hide_nav, (state) => ({ ...state, navb: false })),
   on(loggedin, (state) => {
     return { ...state, ...initialAuthenticationState, isLoggingOut: false, isLoading: false };
   })

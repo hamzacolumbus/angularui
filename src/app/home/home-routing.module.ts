@@ -5,7 +5,6 @@ import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 import { HomeComponent } from './home.component';
 
 import { SignupComponent } from './signup/signup.component';
-import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

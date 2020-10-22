@@ -9,9 +9,22 @@ import { CardModule } from 'primeng/card';
 import { SignupComponent } from './signup/signup.component';
 import { FundamentalNgxCoreModule, FormModule } from '@fundamental-ngx/core';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+import { NbLayoutModule, NbStepperModule, NbCardModule, NbWindowModule } from '@nebular/theme';
+import { FormComponent } from './form/form.component';
 @NgModule({
-  imports: [CommonModule, TranslateModule, SharedModule,  FormsModule, HomeRoutingModule, CardModule,  FundamentalNgxCoreModule],
-  declarations: [HomeComponent, SignupComponent, LoginComponent],
+  imports: [
+    CommonModule,
+    NbLayoutModule,
+    TranslateModule,
+    SharedModule,
+    FormsModule,
+    HomeRoutingModule,
+    CardModule,
+    NbStepperModule,
+    FundamentalNgxCoreModule,
+    NbCardModule,
+    NbWindowModule.forRoot()
+  ],
+  declarations: [HomeComponent,FormComponent,  SignupComponent],
 })
 export class HomeModule {}

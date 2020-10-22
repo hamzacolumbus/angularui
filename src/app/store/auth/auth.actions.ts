@@ -1,6 +1,9 @@
 import { createAction, props } from '@ngrx/store';
 import { User, Create_dto } from '../../@shared/dto/User';
 
+export const show_nav = createAction('[UI] navb');
+export const hide_nav = createAction('[UI] navb');
+
 export const login_request = createAction('[Auth] Request Login');
 export const loggedin = createAction('[Auth] Loggedin');
 export const check_auth = createAction('[Auth] Check');

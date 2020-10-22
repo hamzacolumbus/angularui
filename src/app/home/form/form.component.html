@@ -1,0 +1,144 @@
+<div class="card"  style="width: 49vw;">
+  <nb-card>
+    <nb-card-body>
+      <nb-stepper #stepper>
+        <nb-step [stepControl]="nameForm"  label="Project details">
+          <form #nameForm="ngForm"  class="step-container">
+            <div class="inputs">
+              <label fd-form-label>Project Name</label>
+              <fd-input-group
+                [button]="true"
+                [placement]="'before'"
+                [glyph]="'accelerated'"
+                name="name"
+                required
+                (ngModel)="(project.name)"
+              ></fd-input-group>
+              <div class="steps">
+                <div class="i">
+                  <label fd-form-label>Type</label>
+                  <fd-input-group
+                  [button]="true"
+                  [placement]="'before'"
+                  [glyph]="'accelerated'"
+                  name="type"
+                  (ngModel)="(project.type)"
+                  required
+                  ></fd-input-group>  </div>
+                <div class="i">              
+                  <label fd-form-label>Responsible</label>
+                  <fd-input-group
+                  (ngModel)="(project.responsible)"
+                  [button]="true"
+                  [placement]="'before'"
+                  [glyph]="'accelerated'"
+                  name="responsible"
+                  required
+                  ></fd-input-group>
+                </div>
+                <div class="i">              
+                  <label fd-form-label>Priority</label>
+                  <fd-input-group
+                  (ngModel)="(project.priority)"
+                  [button]="true"
+                  [placement]="'before'"
+                  [glyph]="'accelerated'"
+                  name="priority"
+                  required
+                  ></fd-input-group>
+                </div>
+  
+              </div>
+              <label fd-form-label>
+                Description
+                <fd-inline-help>
+                    Please write a project description
+                </fd-inline-help>
+            </label>
+            <textarea 
+            fd-form-control
+            name="desc"
+            required
+            (ngModel)="(project.desc)"
+            placeholder="Field placeholder text"></textarea>
+              <label fd-form-label>Owner</label>
+              <fd-input-group
+                [button]="true"
+                [placement]="'before'"
+                [glyph]="'accelerated'"
+                name="owner"
+                (ngModel)="(project.owner)"
+              ></fd-input-group>
+              <label fd-form-label>Ansprech</label>
+              <fd-input-group
+                [button]="true"
+                [placement]="'before'"
+                [glyph]="'accelerated'"
+                name="ansprech"
+                (ngModel)="(project.ansprech)"
+              ></fd-input-group>
+            </div>
+            <button fd-button label="Next" [fdType]="'emphasized'"  nbStepperNext></button>
+  
+          </form>
+        </nb-step>
+  
+  
+  
+        <nb-step [stepControl]="nameForm"
+        >
+          <form #nameForm="ngForm"  class="step-container">
+            <div class="inputs">
+              <label fd-form-label>BP name</label>
+              <fd-input-group
+                [button]="true"
+                [placement]="'before'"
+                [glyph]="'accelerated'"
+                name="BP_name"
+                (ngModel)="(project.BP_name)"
+
+              ></fd-input-group>
+              <div class="steps">
+                <div class="i">
+                  <label fd-form-label>BP code</label>
+                  <fd-input-group
+                    [button]="true"
+                    [placement]="'before'"
+                    [glyph]="'accelerated'"
+                    name="adress"
+                  ></fd-input-group> 
+                </div>
+                <div class="i">
+                  <label fd-form-label>Project No</label>
+                  <fd-input-group
+                    [button]="true"
+                    [placement]="'before'"
+                    [glyph]="'accelerated'"
+                    name="adress"
+                  ></fd-input-group>
+                </div>
+                <div class="i">
+                  <label fd-form-label>Financial Project</label>
+                  <fd-input-group
+                    [button]="true"
+                    [placement]="'before'"
+                    [glyph]="'accelerated'"
+                    name="adress"
+                  ></fd-input-group> 
+                </div>
+              </div>            
+            </div>
+            <button fd-button label="Next" [fdType]="'emphasized'"  nbStepperNext  (click)="verify(nameForm.value)"></button>
+  
+          </form>
+        </nb-step>
+        <nb-step [hidden]="true">
+          <div class="step-container">
+            <h3>Wizard completed!</h3>
+            <button nbButton (click)="stepper.reset()">Try again</button>
+          </div>
+        </nb-step>
+      </nb-stepper>
+    </nb-card-body>
+  </nb-card>  
+  </div>

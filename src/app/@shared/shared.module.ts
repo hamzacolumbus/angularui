@@ -7,7 +7,7 @@ import { SideComponent } from './sidenav/sidenav.component';
 import { FundamentalNgxCoreModule, IconModule } from '@fundamental-ngx/core';
 
 @NgModule({
-  imports: [CommonModule,  FundamentalNgxCoreModule,  IconModule],
+  imports: [CommonModule, FundamentalNgxCoreModule, IconModule],
   declarations: [SideComponent, HeaderComponent, LoaderComponent],
   exports: [SideComponent, HeaderComponent, LoaderComponent],
 })

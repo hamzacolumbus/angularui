@@ -6,6 +6,8 @@ import { AuthService } from '@app/services/auth.service';
 
 const log = new Logger('AuthenticationGuard');
 
+
+
 @Injectable({
   providedIn: 'root',
 })
