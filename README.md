@@ -54,6 +54,10 @@ src/                         project source code
 |  |- app.component.*        app root component (shell)
 |  |- app.module.ts          app root module definition
 |  |- app-routing.module.ts  app routes
+|  |- store
+|  |  |-  projects
+|  |  |-  auth
+|  |  |-  ui
 |  +- ...                    additional modules and components
 |- assets/                   app assets (images, fonts, sounds...)
 |- environments/             values for various build environments

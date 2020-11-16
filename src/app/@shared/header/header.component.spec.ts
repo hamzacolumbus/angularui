@@ -16,10 +16,18 @@ describe('HeaderComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [RouterTestingModule, NgbModule, TranslateModule.forRoot(), I18nModule],
+        imports: [
+          RouterTestingModule,
+          NgbModule,
+          TranslateModule.forRoot(),
+          I18nModule,
+        ],
         declarations: [HeaderComponent],
         providers: [
-          { provide: AuthenticationService, useClass: MockAuthenticationService },
+          {
+            provide: AuthenticationService,
+            useClass: MockAuthenticationService,
+          },
           { provide: CredentialsService, useClass: MockCredentialsService },
         ],
       }).compileComponents();

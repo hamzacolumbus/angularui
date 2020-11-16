@@ -1,17 +1,16 @@
 <nb-layout>
-    <nb-layout-header>
-        <h2>Web Appl</h2>    
-    </nb-layout-header>
-    <nb-sidebar  *ngIf="show"  class="navv">
-      <div class="list">
-        <a href="">Dashboard</a>
-        <a href="">Files</a>
-        <a href="">Discus</a>
-        <a href="">Link</a>
-      </div>
-    </nb-sidebar>
-    <nb-layout-column class="colored-column-basic">
-      <router-outlet></router-outlet>  
-    </nb-layout-column>
-    
-  </nb-layout>
+  <nb-layout-header>
+    <h2>Web Appl</h2>
+  </nb-layout-header>
+  <nb-sidebar *ngIf="show" class="navv">
+    <div class="list">
+      <a href="">Dashboard</a>
+      <a href="">Files</a>
+      <a href="">Discus</a>
+      <a href="">Link</a>
+    </div>
+  </nb-sidebar>
+  <nb-layout-column class="colored-column-basic">
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+</nb-layout>

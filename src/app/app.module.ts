@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -18,13 +18,21 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './store/auth/auth.effects';
 import { IconModule, FundamentalNgxCoreModule } from '@fundamental-ngx/core';
-import { NbThemeModule, NbLayoutModule, NbSidebarComponent, NbSidebarModule } from '@nebular/theme';
+import {
+  NbThemeModule,
+  NbLayoutModule,
+  NbSidebarComponent,
+  NbSidebarModule,
+} from '@nebular/theme';
+import { EditableModule } from '@ngneat/edit-in-place';
 @NgModule({
   imports: [
     ProjectModule,
     IconModule,
     BrowserModule,
-    ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('./ngsw-worker.js', {
+      enabled: environment.production,
+    }),
     HttpClientModule,
     TranslateModule.forRoot(),
     NgbModule,
@@ -36,6 +44,7 @@ import { NbThemeModule, NbLayoutModule, NbSidebarComponent, NbSidebarModule } fr
     FormsModule,
     FundamentalNgxCoreModule,
     IconModule,
+    EditableModule,
     NbSidebarModule.forRoot(),
     StoreModule.forRoot(reducers, {
       runtimeChecks: {
@@ -45,7 +54,7 @@ import { NbThemeModule, NbLayoutModule, NbSidebarComponent, NbSidebarModule } fr
     }),
     StoreDevtoolsModule.instrument({}),
     EffectsModule.forRoot([AuthEffects]),
-    AppRoutingModule, // must be imported as the last module as it contains the fallback route,
+    AppRoutingModule  // must be imported as the last module as it contains the fallback route,
   ],
   declarations: [AppComponent],
   providers: [],

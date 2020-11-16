@@ -9,8 +9,6 @@ export interface LoginContext {
   remember?: boolean;
 }
 
-
-
 /**
  * Provides a base for authentication workflow.
  * The login/logout methods should be replaced with proper implementation.
