@@ -8,8 +8,7 @@ import {
   logout,
   logout_failed,
   logout_request,
-  show_nav,
-  hide_nav,
+  set_token,
 } from './auth.actions';
 
 import { createReducer, on } from '@ngrx/store';
@@ -21,23 +20,35 @@ const initialAuthenticationState: AuthenticationState = {
   authed: false,
 
   register: null,
-  navb:  false
+  token: null,
 };
 
 export const AuthenticationReducer = createReducer(
   initialAuthenticationState,
-  on(signin_request, (state, { register }) => ({ ...state, isLoading: true, register: register })),
+  on(signin_request, (state, { register }) => ({
+    ...state,
+    isLoading: true,
+    register: register,
+  })),
   on(signin_failed, (state) => ({ ...state, isLoading: false })),
   on(signedin, (state) => ({ ...state, isLoading: false })),
-  on(loginin_failed, (state, payload) => ({ ...state, ...payload, isLoading: false })),
+  on(loginin_failed, (state, payload) => ({
+    ...state,
+    ...payload,
+    isLoading: false,
+  })),
   on(logout_request, (state, user) => ({ ...state, isLoading: true, ...user })),
   on(logout_failed, (state) => ({ ...state, isLoading: false })),
   on(logout, (state) => ({ ...state, isLoading: false })),
   on(login_request, (state) => ({ ...state, isLoading: true })),
-  
-  on(show_nav, (state) => ({ ...state, navb: true })),
-  on(hide_nav, (state) => ({ ...state, navb: false })),
+
+  on(set_token, (state, { token }) => ({ ...state, token: token })),
   on(loggedin, (state) => {
-    return { ...state, ...initialAuthenticationState, isLoggingOut: false, isLoading: false };
+    return {
+      ...state,
+      ...initialAuthenticationState,
+      isLoggingOut: false,
+      isLoading: false,
+    };
   })
 );

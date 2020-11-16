@@ -1,16 +1,49 @@
-.list{
-    display: flex;
-    flex-direction: column;
+.list {
+  display: flex;
+  flex-direction: column;
 }
 
-.navv{
-    background-color: rgb(7, 42, 136);
+.edit{
+  display: none;
 }
-a{
-    padding: 1em;
-    color: lightyellow;
+
+.flex{
+  display: flex;
+  justify-content: space-between;
 }
-a:hover{
-    background-color: rgb(232, 234, 247);
-    border-radius: 1em;
+.teil{
+  display: flex;
+}
+.labels{
+  display: flex;
+  justify-content: flex-start;
+
+  flex-direction: column;
+}
+.props{
+  display: flex;
+  justify-content: flex-start;
+
+  flex-direction: column;
+}
+.navv {
+  background-color: rgb(7, 42, 136);
+}
+a {
+  padding: 1em;
+  color: rgb(183, 187, 189);
+}
+a:hover {
+  background-color: rgb(232, 234, 247);
+  border-radius: 1em;
+}
+.task{
+  padding: 1em;
+  margin: 0.1em;
+
+  border: 1px solid bisque;
+  border-radius: 0.1em;
+}
+
+select{
 }

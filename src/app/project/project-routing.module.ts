@@ -5,7 +5,11 @@ import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 import { AppRoutingModule } from '@app/app-routing.module';
 import { ProjectComponent } from './project.component';
 const routes: Routes = [
-  { path: 'project/:id', component: ProjectComponent, data: { title: marker('Project details') } },
+  {
+    path: 'get_token',
+    component: ProjectComponent,
+    data: { title: marker('Project details') },
+  },
 ];
 
 @NgModule({

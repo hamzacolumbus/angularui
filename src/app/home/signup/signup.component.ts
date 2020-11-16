@@ -11,7 +11,10 @@ import { AuthService } from '@app/services/auth.service';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
-  constructor(private store: Store<AuthenticationState>, private auth: AuthService) {}
+  constructor(
+    private store: Store<AuthenticationState>,
+    private auth: AuthService
+  ) {}
   signin: {
     name: '';
     adress: '';

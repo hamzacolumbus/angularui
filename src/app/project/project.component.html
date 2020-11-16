@@ -1,18 +1,91 @@
-
 <div class="project">
-<nb-card>
-  <nb-card-body>
+  <nb-card>
+    <nb-card-body>
+      <nb-tabset>
+        <nb-tab tabTitle="Overview">
+          <div class="flex">
+            <div class="teil">
+              <div class="labels">
+                <label fd-form-label>Project Name</label>
+                <label fd-form-label>Project Type</label>
+                <label fd-form-label>Reason</label>
+                <label fd-form-label>Project Status</label>
+                <label fd-form-label>Project Duration</label>
+                <label fd-form-label>Project Start</label>
+              </div>
+              <div class="props">
+                <div class="el">
+                  <input  [value]="project.ProjectName"  name="ProjectName"  (change)="check_($event)"  type="text">
+                </div>
+                <div class="el">
+                  <select name="ProjectType"  [value]="project.ProjectType"  (change)="check_($event)">
+                    <option value="">select a value</option>
+                    <option value="pt_External">pt_External</option>
+                    <option value="pt_Internal">pt_Internal</option>
+                  </select>
+                </div>                
+                <div class="el">
+                  <input  [value]="project.Reason"  name="Reason"  (change)="check_($event)"  type="text">
+                </div>
+                <div class="el">
+                  <select name="ProjectStatus"  [value]="project.ProjectStatus"  (change)="check_($event)">
+                    <option value="">select a value</option>
+                    <option value="start">start</option>
+                    <option value="design">design</option>
+                    <option value="imple">imple</option>
+                    <option value="fertig">fertig</option>
+                  </select>
+                </div>
+                <div class="el">
+                  <input  [value]="project.Duration"  name="Duration"  (change)="check_($event)"  type="text">
+                </div>
+                <div class="el">
+                  <input  [value]="project.StartDate"  name="StartDate"  (change)="check_($event)"  type="text">
+                </div>
+              </div>
+            </div>
+            <div class="teil">
+              <div class="labels">
+                <label fd-form-label>BP</label>
+                <label fd-form-label>BP Name</label>
+                <label fd-form-label>Contact Person</label>
+                <label fd-form-label>Project Owner</label>
+                <label fd-form-label>Industry</label>
+                <label fd-form-label>Territory</label>
+              </div>
+              <div class="props">
+                <div class="el">
+                  <input  [value]="project.BusinessPartner"  name="BusinessPartner"  (change)="check_($event)"  type="text">
+                </div>
+                <div class="el">
+                  <input  [value]="project.BusinessPartnerName"  name="BusinessPartnerName"  (change)="check_($event)"  type="text">
+                </div>
+                <div class="el">
+                  <input  [value]="project.ContactPerson"  name="ContactPerson"  (change)="check_($event)"  type="text">
+                </div>
+                <div class="el">
+                  <input  [value]="project.Owner"  name="Owner"  (change)="check_($event)"  type="text">
+                </div>
+                <div class="el">
+                  <input  [value]="project.Industry"  name="Industry"  (change)="check_($event)"  type="text">
+                </div>
+                <div class="el">
+                  <input  [value]="project.Territory"  name="Territory"  (change)="check_($event)"  type="text">
+                </div>
+              </div>
+            </div>
+          </div>
+        </nb-tab>
+        <nb-tab tabTitle="Tasks">
+          <p>List of <strong>Tasks</strong>.</p>
+          <div class="list">
+            <div *ngFor="let task of project.PM_StagesCollection"  class="task">
+              {{task.Description}}
+            </div>
+          </div>
 
-    <nb-tabset>
-      <nb-tab tabTitle="Users">
-        <p>List of <strong>users</strong>.</p>
-      </nb-tab>
-      <nb-tab tabTitle="Orders">
-        <p>List of <strong>orders</strong>.</p>
-      </nb-tab>
-    </nb-tabset>
-
-  </nb-card-body>
-</nb-card>  
+        </nb-tab>
+      </nb-tabset>
+    </nb-card-body>
+  </nb-card>
 </div>
-

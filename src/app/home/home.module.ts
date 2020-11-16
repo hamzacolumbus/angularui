@@ -7,10 +7,19 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { CardModule } from 'primeng/card';
 import { SignupComponent } from './signup/signup.component';
-import { FundamentalNgxCoreModule, FormModule } from '@fundamental-ngx/core';
+import {
+  FundamentalNgxCoreModule,
+  FormModule,
+  IconModule,
+} from '@fundamental-ngx/core';
 import { FormsModule } from '@angular/forms';
-import { NbLayoutModule, NbStepperModule, NbCardModule, NbWindowModule } from '@nebular/theme';
-import { FormComponent } from './form/form.component';
+import {
+  NbLayoutModule,
+  NbStepperModule,
+  NbCardModule,
+  NbWindowModule,
+} from '@nebular/theme';
+import { FormComponent } from './create/create.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -23,8 +32,9 @@ import { FormComponent } from './form/form.component';
     NbStepperModule,
     FundamentalNgxCoreModule,
     NbCardModule,
-    NbWindowModule.forRoot()
+    NbWindowModule.forRoot(),
+    IconModule,
   ],
-  declarations: [HomeComponent,FormComponent,  SignupComponent],
+  declarations: [HomeComponent, FormComponent, SignupComponent],
 })
 export class HomeModule {}

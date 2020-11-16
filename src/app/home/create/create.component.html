@@ -1,0 +1,147 @@
+<div class="card" style="width: 49vw">
+  <nb-card>
+    <nb-card-body>
+      <nb-stepper #stepper>
+        <nb-step [stepControl]="nameForm" label="Project details">
+          <form #nameForm="ngForm" class="step-container">
+            <div class="inputs">
+              <label fd-form-label>Project Name</label>
+              <fd-input-group
+                [button]="true"
+                [placement]="'before'"
+                [glyph]="'accelerated'"
+                name="ProjectName"
+                required
+                (ngModel)="(project.ProjectName)"
+              ></fd-input-group>
+              <div class="steps">
+                <div class="i">
+                  <label fd-form-label>Type</label>
+                  <fd-select  
+                  placeholder="Select a type"
+                  [(value)]="ProjectType"
+                  name="ProjectType"
+                  >
+                    <fd-option value="Internal Project">Internal Project</fd-option>
+                    <fd-option value="Iexnternal Project">Iexnternal Project</fd-option>
+                  </fd-select>
+                type:  {{ProjectType}}
+                </div>
+                <div class="i">
+                  <label fd-form-label>Owner</label>
+                  <fd-input-group
+                    (ngModel)="(project.Owner)"
+                    [button]="true"
+                    [placement]="'before'"
+                    [glyph]="'accelerated'"
+                    name="Owner"
+                    required
+                  ></fd-input-group>
+                </div>
+                <div class="i">
+                  <label fd-form-label>Territory</label>
+                  <fd-input-group
+                    (ngModel)="(project.Territory)"
+                    [button]="true"
+                    [placement]="'before'"
+                    [glyph]="'accelerated'"
+                    name="Territory"
+                    required
+                  ></fd-input-group>
+                </div>
+              </div>
+              <label fd-form-label>
+                Description
+                <fd-inline-help>
+                  Please write a project description
+                </fd-inline-help>
+              </label>
+              <textarea
+                fd-form-control
+                name="Reason"
+                required
+                (ngModel)="(project.Reason)"
+                placeholder="Field placeholder text"
+              ></textarea>
+              <label fd-form-label>Project Status</label>
+              <fd-input-group
+                [button]="true"
+                [placement]="'before'"
+                [glyph]="'accelerated'"
+                name="ProjectStatus"
+                (ngModel)="(project.ProjectStatus)"
+              ></fd-input-group>
+              <label fd-form-label>Contact  Person</label>
+              <fd-input-group
+                [button]="true"
+                [placement]="'before'"
+                [glyph]="'accelerated'"
+                name="ContactPerson"
+                (ngModel)="(project.ContactPerson)"
+              ></fd-input-group>
+            </div>
+            <button
+            fd-button
+            (click)="save()"
+              label="Next"
+              [fdType]="'emphasized'"
+              nbStepperNext
+            ></button>
+          </form>
+        </nb-step>
+
+        <nb-step [stepControl]="nameForm">
+          <form #nameForm="ngForm" class="step-container">
+            <div class="inputs">
+              <label fd-form-label>BP name</label>
+              <fd-input-group
+                [button]="true"
+                [placement]="'before'"
+                [glyph]="'accelerated'"
+                name="BusinessPartnerName"
+                (ngModel)="(project.BusinessPartnerName)"
+              ></fd-input-group>
+              <div class="steps">
+                <div class="i">
+                  <label fd-form-label>BP code</label>
+                  <fd-input-group
+                  (ngModel)="(project.BusinessPartner)"
+
+                    [button]="true"
+                    [placement]="'before'"
+                    [glyph]="'accelerated'"
+                    name="BusinessPartner"
+                  ></fd-input-group>
+                </div>
+                <div class="i">
+                  <label fd-form-label>Sales  Employee</label>
+                  <fd-input-group
+                  (ngModel)="(project.SalesEmployee)"
+
+                    [button]="true"
+                    [placement]="'before'"
+                    [glyph]="'accelerated'"
+                    name="SalesEmployee"
+                  ></fd-input-group>
+                </div>
+              </div>
+            </div>
+            <button
+              fd-button
+              label="Next"
+              [fdType]="'emphasized'"
+              nbStepperNext
+              (click)="verify(nameForm.value)"
+            ></button>
+          </form>
+        </nb-step>
+        <nb-step [hidden]="true">
+          <div class="step-container">
+            <button nbButton (click)="save()"></button>
+            <button nbButton (click)="stepper.reset()"></button>
+          </div>
+        </nb-step>
+      </nb-stepper>
+    </nb-card-body>
+  </nb-card>
+</div>

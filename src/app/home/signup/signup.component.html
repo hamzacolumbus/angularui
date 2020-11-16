@@ -2,7 +2,11 @@
   <div class="tabs">
     <h2>Create a new account</h2>
     <div [title]="'Signup'">
-      <form class="form" #userlogin="ngForm" (ngSubmit)="verify(userlogin.value)">
+      <form
+        class="form"
+        #userlogin="ngForm"
+        (ngSubmit)="verify(userlogin.value)"
+      >
         <label fd-form-label>Name</label>
         <fd-input-group
           [button]="true"
@@ -41,6 +45,11 @@
           name="pw_2"
         ></fd-input-group>
         <button type="submit" fd-button label="Signin">Signin</button>
+        <a href="http://localhost:8085/login">login</a>
+        <a
+          href="https://dev-9754813.okta.com/oauth2/v1/authorize?idp=0oakddekTCXoAQLpD5d5&client_id=692078263456-jncpet2l2puepqmje5k6u03cv5nou9c1.apps.googleusercontent.com&response_type=code&response_mode=fragment&scope=openid&redirect_uri=https%3A%2F%2Fdev-9754813.okta.com%2Foauth2%2Fv1%2Fauthorize%2Fcallback&state=test&nonce=test"
+          >Sign in with Identity Provider</a
+        >
       </form>
     </div>
   </div>

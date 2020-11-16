@@ -1,21 +1,18 @@
-
 .content {
   display: flex;
   height: 100vh;
 
   justify-content: center;
 }
-.dash{
+.dash {
   display: flex;
   flex-direction: column;
-
-
 }
 
-.button{
+.button {
   width: fit-content;
 }
-.create{
+.create {
   display: flex;
   justify-content: flex-end;
 }
@@ -24,17 +21,26 @@
   display: flex;
 }
 
-
 .list {
   box-shadow: -1px 0px 11px -1px #3f3f3f;
 }
-.boards{  
+.boards {
   flex-wrap: wrap;
 
   display: flex;
   justify-content: space-between;
 }
 
-.board{
-  width: 45%;;
+.board {
+  width: 45%;
+}
+.dele{
+  display: none;
+}
+.dele:hover{
+  display: inline;
+}
+
+.project:hover {
+  cursor: pointer;
 }

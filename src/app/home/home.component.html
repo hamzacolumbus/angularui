@@ -1,5 +1,11 @@
 <div class="dash">
-  <button fd-button label="Create Project" [fdType]="'emphasized'"  class="button"  (click)="create()"></button>
+  <button
+    fd-button
+    label="Create Project"
+    [fdType]="'emphasized'"
+    class="button"
+    (click)="create()"
+  ></button>
   <div class="boards">
     <div class="board">
       <fd-layout-panel>
@@ -8,11 +14,11 @@
             <h2 fd-layout-panel-title>Projects</h2>
           </fd-layout-panel-head>
         </fd-layout-panel-header>
-        <fd-layout-panel-filters>
-          Projects
-        </fd-layout-panel-filters>
-        <fd-layout-panel-filters>
-          Projects
+        <fd-layout-panel-filters *ngFor="let project of projects | async">
+          <div (click)="navigate(project)"  class="project">
+            {{ project.ProjectName }}
+            <button>delete</button>
+          </div>
         </fd-layout-panel-filters>
       </fd-layout-panel>
     </div>
@@ -23,14 +29,9 @@
             <h2 fd-layout-panel-title>Projects</h2>
           </fd-layout-panel-head>
         </fd-layout-panel-header>
-        <fd-layout-panel-filters>
-          Projects
-        </fd-layout-panel-filters>
-        <fd-layout-panel-filters>
-          Projects
-        </fd-layout-panel-filters>
+        <fd-layout-panel-filters> Projects </fd-layout-panel-filters>
+        <fd-layout-panel-filters> Projects </fd-layout-panel-filters>
       </fd-layout-panel>
     </div>
   </div>
 </div>
-

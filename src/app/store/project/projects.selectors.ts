@@ -1,9 +1,16 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 import * as from_projects from './projects.reducers';
 import { Statee } from './models';
+import { Project } from '@app/@shared/dto/Project';
 
-export const select_projects_state = createFeatureSelector<Statee>('project');
+export const state = createFeatureSelector<Statee>('projects');
 
-export const select_all_projects = createSelector(select_projects_state, from_projects.selectAll);
+export const select_all_projects = createSelector(
+  state,
+  from_projects.selectAll
+);
+export const select_projects = createSelector(
+  state,
+  from_projects.selectEntities
+);
 
-export const select_project = createSelector(select_projects_state, from_projects.selectAll);
